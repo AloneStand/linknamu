@@ -1,24 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f5f4;
-  --foreground: #171717;
+  --foreground: #3b2a20;
+  --muted: #8a6f5e;
+  --bg-from: #fdf8f1;
+  --bg-via: #fbeee2;
+  --bg-to: #f7dcc7;
+  --glow-a: rgba(255, 196, 150, 0.55);
+  --glow-b: rgba(255, 228, 196, 0.7);
 }
 
 @theme inline {
-  --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-pretendard), "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f6ebe1;
+    --muted: #c4ab99;
+    --bg-from: #1f1814;
+    --bg-via: #2a1f19;
+    --bg-to: #3a2a20;
+    --glow-a: rgba(214, 128, 74, 0.22);
+    --glow-b: rgba(255, 190, 140, 0.1);
   }
 }
 
 body {
-  background: var(--background);
+  position: relative;
+  isolation: isolate;
   color: var(--foreground);
-  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  background: linear-gradient(165deg, var(--bg-from) 0%, var(--bg-via) 50%, var(--bg-to) 100%) fixed;
+}
+
+/* 글래스 카드 뒤로 은은하게 비치는 빛 번짐 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(40rem 28rem at 85% 10%, var(--glow-a), transparent 70%),
+    radial-gradient(36rem 30rem at 10% 90%, var(--glow-b), transparent 70%);
 }

@@ -16,12 +16,12 @@ export type Profile = {
 // TODO: 보여 주기용 더미 값입니다. 실제 내용으로 교체하세요.
 export const profile: Profile = {
   name: "김시윤",
-  bio: "세계 최강 바이브코더",
-  avatarUrl: "/avatar.svg",
+  bio: "학생 | 요즘에는 AI 에 관심이 많아요",
+  avatarUrl: "https://placehold.co/224x224/orange/white.png",
   links: [
-    { id: "github", title: "GitHub", url: "https://github.com" },
-    { id: "linkedin", title: "LinkedIn", url: "https://www.linkedin.com" },
-    { id: "blog", title: "Blog", url: "https://velog.io" },
+    { id: "github", title: "🐙 깃허브", url: "https://github.com/AloneStand" },
+    { id: "blog", title: "📝 블로그", url: "https://blog.naver.com/gmprime" },
+    { id: "email", title: "📧 이메일", url: "mailto:talonestand@gmail.com" },
   ],
 };
 

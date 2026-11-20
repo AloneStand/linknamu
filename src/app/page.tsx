@@ -10,7 +10,7 @@ import { profile } from "@/data/profile";
  */
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-md flex-1 flex-col items-center gap-10 px-4 py-12 sm:py-16">
+    <main className="mx-auto flex w-full max-w-md flex-1 flex-col items-center gap-12 px-6 py-16 sm:py-24">
       <ProfileHeader name={profile.name} bio={profile.bio} avatarUrl={profile.avatarUrl} />
       <LinkList links={profile.links} />
     </main>
