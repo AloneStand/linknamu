@@ -1,8 +1,13 @@
+/** src/components/BrandIcon.tsx 에 정의된 로고 이름 */
+export type BrandIconName = "github" | "naver" | "gmail";
+
 export type LinkItem = {
   /** 클릭 수 집계에 쓰이는 고유 ID (바꾸면 해당 링크의 집계가 새로 시작됩니다) */
   id: string;
   title: string;
   url: string;
+  /** 제목 앞에 표시할 브랜드 로고 (선택) */
+  icon?: BrandIconName;
 };
 
 export type Profile = {

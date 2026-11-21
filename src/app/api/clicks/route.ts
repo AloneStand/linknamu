@@ -1,8 +1,11 @@
+import { connection } from "next/server";
 import { linkIds } from "@/data/profile";
 import { getClickCounts, incrementClick } from "@/lib/clicks";
 
 /** 링크별 클릭 수 조회: GET /api/clicks → { "github": 3, ... } */
 export async function GET() {
+  // 빌드 시 정적으로 굳지 않고 매 요청마다 DB에서 읽도록 동적 처리
+  await connection();
   try {
     return Response.json(await getClickCounts());
   } catch (error) {
